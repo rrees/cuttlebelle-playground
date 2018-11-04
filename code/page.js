@@ -8,10 +8,12 @@ import React from 'react';
 const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _ID }) => (
 	<html>
 	<head>
-		<title>Cuttlebelle - { title }</title>
+		<title>{ title } - Cuttlebelle test site</title>
 		<meta charSet="utf-8" />
 		<meta httpEquiv="x-ua-compatible" content="ie=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"/>
 
 		<link rel="stylesheet" href={ _relativeURL( `/assets/css/site.css`, _ID ) } />
 		{
@@ -21,15 +23,15 @@ const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _
 		}
 	</head>
 	<body>
-		<div className="top">
-			<header role="banner">
-				{ header }
+		<section className="section">
+			<header role="banner" className="container">
+				<h1 className="title">{ title }</h1>
 			</header>
 
-			<main>
+			<main className="container">
 				{ main }
 			</main>
-		</div>
+		</section>
 
 		<footer>
 			{ footer }
